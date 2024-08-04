@@ -1,0 +1,10 @@
+.icon {
+  stroke: #fff;
+  fill: none;
+  transition: color 0.3s;
+}
+
+.icon.active {
+  fill: #3470ff;
+  stroke: #3470ff;
+}

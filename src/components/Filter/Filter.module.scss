@@ -1,0 +1,102 @@
+.wrapper {
+  margin-top: 30px;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 18px;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.label_brand {
+  composes: label;
+  max-width: 224px;
+  width: 100%;
+}
+.label_price {
+  composes: label;
+  max-width: 125px;
+  width: 100%;
+}
+.label_text {
+  font-size: 14px;
+  line-height: 129%;
+  color: #8a8a89;
+}
+.input {
+  padding: 14px;
+  border-radius: 14px;
+  background-color: #f7f7fb;
+  font-size: 18px;
+  line-height: 111%;
+  color: #121417;
+  border: 1px solid transparent;
+}
+.input:focus,
+.input:active {
+  border-color: #0b44cd;
+  outline: #0b44cd;
+}
+.price_option {
+  border: 1px solid rgba(18, 20, 23, 0.05);
+  border-radius: 14px;
+  max-width: 125px;
+  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.02);
+  background: #fff;
+}
+
+.block_mileage {
+  display: flex;
+}
+.input_mileage_left {
+  border-color: transparent;
+  padding: 14px;
+  max-width: 160px;
+  border-right: 1px solid rgba(138, 138, 137, 0.2);
+  border-radius: 14px 0 0 14px;
+  background-color: #f7f7fb;
+  font-size: 18px;
+  line-height: 111%;
+  color: #121417;
+  outline: transparent;
+}
+.input_mileage_left::placeholder,
+.input_mileage_right::placeholder {
+  font-size: 18px;
+  line-height: 111%;
+  color: #121417;
+}
+.input_mileage_left:active,
+.input_mileage_left:focus,
+.input_mileage_right:active,
+.input_mileage_right:focus {
+  border-color: #0b44cd;
+  outline: #0b44cd;
+}
+.input_mileage_right {
+  composes: input_mileage_left;
+  border-radius: 0 14px 14px 0;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #3470ff;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 143%;
+    color: #fff;
+    transition:  background-color .3s ease;
+  
+    &:hover {
+      background-color:  #0b44cd;
+    }
+  }

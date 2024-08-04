@@ -1,0 +1,28 @@
+.list {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 29px;
+}
+
+.btn_load_more {
+  display: block;
+  margin: 100px auto 0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  border-radius: 12px;
+  width: 136px;
+  height: 48px;
+  border: none;
+  background-color: #3470ff;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+  &:hover {
+    color: #0b44cd;
+  }
+}
