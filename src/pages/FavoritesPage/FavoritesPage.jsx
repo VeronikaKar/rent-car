@@ -1,64 +1,30 @@
-import React, { useEffect, useState } from "react";
-import s from "./FavoritesPage.module.scss";
-import { CatalogItem } from "../../components/CatalogItem/CatalogItem";
+import { FaCar } from "react-icons/fa";
+import { useSelector } from "react-redux";
+
+import CardsList from "../../components/CardsList/CardsList";
+
+import { selectFavorites } from "../../redux/catalog/selectors.js";
+
+import css from "./FavoritesPage.module.scss";
 
 const FavoritesPage = () => {
-  const [favorites, setFavorites] = useState([]);
-  const [cars, setCars] = useState([]); 
-
-  useEffect(() => {
-    
-    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    setFavorites(savedFavorites);
-
-    
-    fetchCars();
-  }, []);
-
-  const fetchCars = async () => {
-    try {
-    
-      const response = await fetch(
-        "https://667d5847297972455f64b57d.mockapi.io/v1/adverts"
-      );
-      const data = await response.json();
-      setCars(data);
-    } catch (error) {
-      console.error("Failed to fetch cars", error);
-    }
-  };
-
-  const handleToggleFavorite = (id) => {
-    const updatedFavorites = favorites.includes(id)
-      ? favorites.filter((itemId) => itemId !== id)
-      : [...favorites, id];
-
-    setFavorites(updatedFavorites);
-
-    
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-  };
-
- 
-  const favoriteCars = cars.filter((car) => favorites.includes(car.id));
+  const favorites = useSelector(selectFavorites);
 
   return (
-    <div className={s.container}>
-      {favoriteCars.length === 0 ? (
-        <p>No favorite items found.</p>
-      ) : (
-        <ul className={s.list}>
-          {favoriteCars.map((car) => (
-            <CatalogItem
-              key={car.id}
-              {...car}
-              isFavorited={true}
-              onToggleFavorite={handleToggleFavorite}
-            />
-          ))}
-        </ul>
+    <>
+      <CardsList favorites={favorites} />
+      {favorites.length === 0 && (
+        <>
+          <div className={css.wrapper}>
+            <FaCar size={100} color="#3470ff" />
+            <p className={css.title}>You don&#x27;t have any favorite cars.</p>
+            <p className={css.description}>
+              Add something so it will be displayed here.
+            </p>
+          </div>
+        </>
       )}
-    </div>
+    </>
   );
 };
 

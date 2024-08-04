@@ -1,0 +1,28 @@
+:root {
+  --primary-font: "Manrope", sans-serif;
+  --secondary-font: "Inter", sans-serif;
+  --third-font: "Montserrat", sans-serif;
+
+  --primary-color: #121417;
+  --secondary-color: rgba(18, 20, 23, 0.5);
+
+  --accent: #3470ff;
+  --accent-hover: #0b44cd;
+  --accent-text: #fff;
+
+  --input-backgr: #f7f7fb;
+
+  --select-lable: #8a8a89;
+  --select-text: rgba(18, 20, 23, 0.2);
+
+  --tag-text: #363535;
+  --tag-backgr: #f9f9f9;
+  --tag-border: rgba(18, 20, 23, 0.1);
+}
+
+body {
+  color: var(--secondary-color);
+  font-family: var(--primary-font);
+  font-size: 12px;
+  line-height: 1.5;
+}

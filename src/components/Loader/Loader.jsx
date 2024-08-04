@@ -2,7 +2,7 @@ import React from "react";
 import { InfinitySpin } from "react-loader-spinner";
 import s from "./Loader.module.scss";
 
-export const Loader = () => {
+const Loader = () => {
   return (
     <div className={s.container}>
       <InfinitySpin
@@ -14,3 +14,4 @@ export const Loader = () => {
     </div>
   );
 };
+export default Loader;

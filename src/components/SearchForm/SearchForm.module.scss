@@ -14,12 +14,12 @@
   gap: 8px;
 }
 .label_brand {
-  composes: label;
+  @extend .label;
   max-width: 224px;
   width: 100%;
 }
 .label_price {
-  composes: label;
+  @extend .label;
   max-width: 125px;
   width: 100%;
 }
@@ -36,11 +36,12 @@
   line-height: 111%;
   color: #121417;
   border: 1px solid transparent;
-}
-.input:focus,
-.input:active {
-  border-color: #0b44cd;
-  outline: #0b44cd;
+
+  &:focus,
+  &:active {
+    border-color: #0b44cd;
+    outline: #0b44cd;
+  }
 }
 .price_option {
   border: 1px solid rgba(18, 20, 23, 0.05);
@@ -54,7 +55,6 @@
   display: flex;
 }
 .input_mileage_left {
-  border-color: transparent;
   padding: 14px;
   max-width: 160px;
   border-right: 1px solid rgba(138, 138, 137, 0.2);
@@ -64,39 +64,38 @@
   line-height: 111%;
   color: #121417;
   outline: transparent;
-}
-.input_mileage_left::placeholder,
-.input_mileage_right::placeholder {
-  font-size: 18px;
-  line-height: 111%;
-  color: #121417;
-}
-.input_mileage_left:active,
-.input_mileage_left:focus,
-.input_mileage_right:active,
-.input_mileage_right:focus {
-  border-color: #0b44cd;
-  outline: #0b44cd;
+
+  &::placeholder {
+    font-size: 18px;
+    line-height: 111%;
+    color: #121417;
+  }
+
+  &:active,
+  &:focus {
+    border-color: #0b44cd;
+    outline: #0b44cd;
+  }
 }
 .input_mileage_right {
-  composes: input_mileage_left;
+  @extend .input_mileage_left;
   border-radius: 0 14px 14px 0;
 }
 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 12px 0;
-    background-color: #3470ff;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 143%;
-    color: #fff;
-    transition:  background-color .3s ease;
-  
-    &:hover {
-      background-color:  #0b44cd;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #3470ff;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 143%;
+  color: #fff;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0b44cd;
   }
+}

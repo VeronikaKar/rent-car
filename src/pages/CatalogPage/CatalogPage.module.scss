@@ -1,5 +1,20 @@
-.container {
+.button {
+  color: var(--accent);
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+
+  border: none;
+  cursor: pointer;
+  display: block;
   margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 20px;
+  transition: color 250ms linear;
+}
+
+.button:hover,
+.button:focus {
+  color: var(--accent-hover);
 }
