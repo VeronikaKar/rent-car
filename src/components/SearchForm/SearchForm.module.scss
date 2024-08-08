@@ -1,101 +1,90 @@
-.wrapper {
-  margin-top: 30px;
-}
 .form {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   gap: 18px;
+
+  margin-bottom: 25px;
 }
+
+@media only screen and (min-width: 1280px) {
+  .form {
+    flex-wrap: nowrap;
+    margin-bottom: 50px;
+  }
+}
+
 .label {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   gap: 8px;
 }
-.label_brand {
-  @extend .label;
-  max-width: 224px;
-  width: 100%;
-}
-.label_price {
-  @extend .label;
-  max-width: 125px;
-  width: 100%;
-}
-.label_text {
-  font-size: 14px;
-  line-height: 129%;
-  color: #8a8a89;
-}
-.input {
-  padding: 14px;
-  border-radius: 14px;
-  background-color: #f7f7fb;
-  font-size: 18px;
-  line-height: 111%;
-  color: #121417;
-  border: 1px solid transparent;
 
-  &:focus,
-  &:active {
-    border-color: #0b44cd;
-    outline: #0b44cd;
-  }
-}
-.price_option {
-  border: 1px solid rgba(18, 20, 23, 0.05);
+.field {
   border-radius: 14px;
-  max-width: 125px;
-  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.02);
-  background: #fff;
+  padding: 14px 89px 14px 18px;
+  width: 224px;
+  height: 48px;
 }
 
-.block_mileage {
+.input_wrapper {
   display: flex;
 }
-.input_mileage_left {
-  padding: 14px;
-  max-width: 160px;
+
+.input {
+  color: var(--primary-color);
+  background-color: var(--input-backgr);
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.11%;
+
+  width: 160px;
+  height: 48px;
+  border: none;
+  outline: none;
+  padding: 14px 24px;
+}
+
+.input[name="from"] {
   border-right: 1px solid rgba(138, 138, 137, 0.2);
   border-radius: 14px 0 0 14px;
-  background-color: #f7f7fb;
-  font-size: 18px;
-  line-height: 111%;
-  color: #121417;
-  outline: transparent;
-
-  &::placeholder {
-    font-size: 18px;
-    line-height: 111%;
-    color: #121417;
-  }
-
-  &:active,
-  &:focus {
-    border-color: #0b44cd;
-    outline: #0b44cd;
-  }
 }
-.input_mileage_right {
-  @extend .input_mileage_left;
+
+.input[name="to"] {
   border-radius: 0 14px 14px 0;
 }
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 12px 0;
-  background-color: #3470ff;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 143%;
-  color: #fff;
-  transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: #0b44cd;
+.input::placeholder {
+  color: inherit;
+}
+
+.button {
+  color: var(--accent-text);
+  background-color: var(--accent);
+  font-weight: 600;
+  line-height: 1.43%;
+
+  width: 136px;
+  height: 48px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 14px 44px;
+
+  margin-top: 7px;
+  transition: background-color 250ms linear;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--accent-hover);
+}
+
+@media only screen and (min-width: 768px) {
+  .button {
+    margin-top: 26px;
   }
 }

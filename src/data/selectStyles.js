@@ -1,6 +1,5 @@
 export const selectStyles = {
-  control: (baseStyles) => ({
-    ...baseStyles, // Use baseStyles here
+  control: () => ({
     width: 224,
     height: 48,
     borderRadius: 14,
@@ -15,22 +14,21 @@ export const selectStyles = {
     fontSize: 18,
     lineHeight: 1.11,
   }),
-  valueContainer: (baseStyles) => ({
-    ...baseStyles, // Use baseStyles here
+  valueContainer: () => ({
     width: 186,
     height: 18,
     padding: 0,
   }),
   singleValue: (baseStyles) => ({
-    ...baseStyles, // Use baseStyles here
+    ...baseStyles,
     color: "#121417",
   }),
+
   placeholder: (baseStyles) => ({
-    ...baseStyles, // Use baseStyles here
+    ...baseStyles,
     color: "#121417",
   }),
-  input: (baseStyles) => ({
-    ...baseStyles, // Use baseStyles here
+  input: () => ({
     width: 186,
     height: 18,
     padding: 0,
@@ -42,8 +40,7 @@ export const selectStyles = {
   indicatorSeparator: () => ({
     display: "none",
   }),
-  dropdownIndicator: (baseStyles, state) => ({
-    ...baseStyles, // Use baseStyles here
+  dropdownIndicator: (_, state) => ({
     height: 20,
     width: 20,
     position: "absolute",
@@ -53,7 +50,7 @@ export const selectStyles = {
     transform: state.isFocused ? "rotate(180deg)" : null,
   }),
   menu: (baseStyles) => ({
-    ...baseStyles, // Use baseStyles here
+    ...baseStyles,
     border: "1px solid rgba(18, 20, 23, 0.05)",
     borderRadius: 14,
     padding: "14px 18px",
@@ -61,7 +58,7 @@ export const selectStyles = {
     margin: 0,
   }),
   menuList: (baseStyles) => ({
-    ...baseStyles, // Use baseStyles here
+    ...baseStyles,
     color: "rgba(18, 20, 23, 0.2)",
     fontSize: 16,
     lineHeight: 1.25,
@@ -84,7 +81,6 @@ export const selectStyles = {
     },
   }),
   option: (baseStyles, state) => ({
-    ...baseStyles, // Use baseStyles here
     padding: 0,
     cursor: "pointer",
     color: state.isSelected ? "#121417" : "rgba(18, 20, 23, 0.2)",
